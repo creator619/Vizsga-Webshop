@@ -1,0 +1,106 @@
+/* --- Kívánságlista oldal --- */
+
+/* Kereső sáv (opcionális a wishlist-en is) */
+.search-container {
+    padding: 20px 5%;
+    background: var(--bg-light);
+    display: flex;
+    justify-content: center;
+}
+
+.search-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    align-items: center;
+}
+
+.search-icon {
+    position: absolute;
+    left: 18px;
+    font-size: 1.2rem;
+    color: #666;
+    pointer-events: none;
+}
+
+.search-wrapper input {
+    width: 100%;
+    padding: 15px 20px 15px 50px;
+    border: 2px solid transparent;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-family: inherit;
+    background: white;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+/* --- Terméklista rács (Grid layout) --- */
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    padding: 40px 5% 60px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Termékkártya stílusa */
+.product-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    animation: fadeInUp 0.6s ease backwards;
+}
+
+.product-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.product-card img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.product-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 20px 20px 5px;
+    color: var(--primary);
+}
+
+.product-card p {
+    font-size: 1.1rem;
+    color: var(--accent);
+    font-weight: 700;
+    margin: 0 20px 20px;
+}
+
+/* Kedvencek gomb (eltávolításhoz) */
+.wishlist-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    z-index: 10;
+    color: #ff4444;
+}
